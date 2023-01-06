@@ -1,0 +1,154 @@
+%% LyX 2.3.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass{article}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\usepackage{longtable}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{setspace}
+\onehalfspacing
+\begin{document}
+\begin{center}
+{\Large{}Problem set \#1}{\Large\par}
+\par\end{center}
+
+\begin{center}
+Due on January 20th in class \\
+Answers must be typed and printed. You can work in teams under the constraint: Max(Team Size)=2 \\
+
+\par\end{center}
+
+\bigskip{}
+
+1. \textbf{A Structural Labor Supply Model. }Consider
+a population of agents with the following utility function:
+\begin{eqnarray*}
+u_{i}\left(h_{i}\right) & = & e_{i}-\frac{d_{i}}{1+a}h_{i}^{1+a}\\
+ & = & w_{i}h_{i}-\frac{d_{i}}{1+a}h_{i}^{1+a}
+\end{eqnarray*}
+where $e_{i}=w_{i}h_{i}$ is weekly earnings, $w_{i}$ is the wage,
+$h_{i}$ is hours worked per week, $a\in\left(0,\infty\right)$ is
+a parameter governing curvature in the utility function, and $d_{i}$
+is a random variable representing heterogeneity in tastes for work.
+
+Suppose $\log(d_{i})\overset{iid}{\sim}N\left(\mu,\sigma\right)$
+and that the choice set for hours per week is $\left\{ 20,40\right\} $.
+Agents are assumed to maximize utility. We observe hours worked and
+earnings, but not $d_{i}$.
+
+a) Derive the payoffs $\left(u_{20},u_{40}\right)$ to working 20
+and 40 hours per week respectively.
+
+b) Derive the probability of working 40 hours per week given wages.
+
+c) Derive an individual's contribution to the likelihood of the observed
+data
+
+d) To which estimator does this likelihood correspond?
+
+e) Which parameters (or combinations of parameters) are identified?
+
+Suppose now that the choice set for hours is $\left\{ 10,20,40\right\} $,
+
+f) Derive an expression for the probability of working 20 hours per
+week and the probability of working 40 hours per week.
+
+g) Which parameters (or combinations of parameters) are identified?
+
+2. \textbf{A bad RA} You are thinking about a RCT where you will randomize a certain treatment ($D_{i}\in\{0;1\}$) across a population for which you are also going to measure an outcome of interest, call that $Y_{i}$. Your object is to estimate the average treatment effect of $D_{i}$ on the outcome $Y_{i}$. To do that, you are thinking about the following the regression model:
+\[
+Y_{i}=\alpha+\beta D_{i} + r_{i}
+\]
+would the coefficient $\beta$  from the regression above coincide with the average treatment effect of treatment of $D$ onto $Y$? Under what assumptions? Write your steps carefully.
+
+b) You decided to implement the RCT and hired a research assistant (RA) to collect data on $(Y_{i},D_{i})$ where $D_{i}$ is randomly assigned. However, it turns out that the RA was very sloppy when doing the data collection and mistakenly reported some units that received the treatment as being part of the control group instead. Unfortunately, the RA does not recall for which observations this occurred. Let's call the data that the RA collected on treatment status $D^{*}_{i}$. According to the RA:
+\[
+D_{i}^{*}=(1-M_{i})D_{i}
+\]
+where $D_{i}$ is the ``true" treatment status of individual $i$ and $M_{i}$ is an indicator equal to 1 if the RA did a mistake in reporting the treatment status of individual $i$. According to the RA, the probability that he does a mistake in measuring $D_{i}$ is equal to $p$ and also $M_{i}$ is independent of all potential outcomes (i.e. his mistake occurs at ``random"). Your RA claims that a regression of $Y_{i}$ onto $D^{*}_{i}$ will still allow you to identify the average treatment effect of interest. Is the RA correct? Show what does that regression coefficient identifies under the maintained assumption that $M_{i}$ occurs at random. 
+
+c) Given the derivation above, can you provide a simple correction that allows you to identify the treatment effect of interest? Explain your steps carefully and provide some intuition regarding your suggested identification strategy.  
+
+d) You're starting to doubt that the variable $M_{i}$ occurs at random but instead you worry that it correlates with $Y_{i0}$, the potential outcome for individuals in the absence of the treatment. Assume that $Y_{i1}-Y_{i0}=\rho, $\forall i$. Show what does the regression coefficient of $Y_{i}$ onto $D^{*}_{i}$ identify when $M_{i}$ does not occur at random. Comment on your expression and give some intuition.  
+
+3. \textbf{Replication of Olken (2007)} This question asks you to replicate and extend results from the paper ``Monitoring Corruption: Evidence From a Field Experiment in Indonesia'' by Olken (2007).  The data for this question can be found on the course website.  You should begin by reading the paper. \\\linebreak
+In the paper, Olken investigates the effects of different measures to reduce corruption between contractors and village heads in 608 Indonesian villages using a randomized field experiment. The Kecamatan (subdistrict) Development Project, or KDP, is a national Indonesian government program, funded through a loan from the World Bank. KDP finances projects in approximately 15,000 villages throughout Indonesia each year. The data in this paper comes from KDP projects in 608 villages in two of Indonesia’s most populous provinces, East Java and Central Java, and were collected between September 2003 and August 2004. The grant were most commonly used for infrastructure projects. Within the sample of 608 villages, Olken randomized the villages into three different kinds of treatment and a control group, cf.the paper.
+
+The data used to replicate the results from the paper is called \textit{Olken.dta} and is found in the assignment folder. Each variable is labeled in the Stata dataset and a complete list of the variables can be found in the appendix to this assignment.
+
+ a) Olken discusses spill-over effects from the audit treatment. What assumption of the potential outcomes framwork discussed in class does this discussion relate to?
+
+ b) Propose an equation and estimate the effect of increased probability of auditing on percent of missing expenditure with OLS. Argue why you have chosen that particular specification. 
+
+ c) Based on your answers in a) and b), reproduce and comment on table 2 in the paper by Olken.\footnote{Be aware of the features of the left-hand variable.}
+
+d) One peculiar finding by Olken is that corruption still exists in villages that are certain that their project will be audited by government officials. One possible explanation is that village heads and contractors are not punished in every case since substantial evidence of corruption is needed to be convicted. Another point that might attenuate Olken's results is the law of corruption in Indonesia. In 2001 a gratification of 10,000,000 rp. was introduced in Indonesia which in practice can be seen as a kind of threshold of a "legal" level of corruption. If the missing expenditures are below 10,000,000 rp. (approximately 1,200 dollars in 2003) the prosecutor has to prove clear evidence of corruption before the firm is being punished (almost impossible in practice, cf. Makarim and Taira (2012)) while the firm has to account for all of the missing expenditures if they exceed the threshold of 10,000,000 rp.
+
+ e) Back out the total amount of corruption measured in USD.\footnote{Since Olken is using ln there will be some approximation errors if you choose not to transform the measure.}
+
+ f) Create a new variable that measures how much corruption exceeds the threshold value of 1,200 USD and re-estimate the results from Olken. Explain and interpret your findings.
+
+g) Another feature of interest is to look at how many projects that were actually corrupt and how the assurance of audit have altered this. You will now be asked to investigate this feature which will partly be of interest due to empirical matters and partly because it helps you explore how different econometric methods work. 
+ Construct a variable indicating if the village head was corrupt when the threshold value is set at 0 (that is, corruption is defined as an infinitesimal positive deviation of expenditure costs reported compared to what Olken proposes) and when the threshold value is 1,200 (that is, we cut them some slack). The binary outcome variable for the case of zero tolerance can be constructed as
+\begin{align*}
+corrupt_{ijk} = 
+\begin{cases}
+1 & \quad \text{if expenditure loss} > 0 \\
+0 & \quad \text{if expenditure loss} \leq 0.
+\end{cases}
+\end{align*}
+Use this as the left-hand variable in your OLS model used in part (b) of this question. What is the interpretation of the coefficients?
+ Since \emph{corrupt} is a binary outcome variable, OLS is theoretically not a correct way of investigating the above problem. Explain what we - at least as a check - should have done instead.
+
+
+
+\newpage
+
+\begin{appendices}
+\section{Data}
+\begin{center}
+  \begin{longtable}{ p{0.25\textwidth} p{0.75\textwidth} }
+  \multicolumn{2}{c}{Table A.1: Description of variables} \\
+    Variable name & Description  \\ \hline
+    audit & Dummy for audits  \\ 
+    audit\_rand & Dummy used for audits when checking for randomization. Used instead of \emph{audit} due to discrepancies with the merge command. \\
+    auditstratnum & Audit stratum \\
+    desaid & Village id \\
+    fpm & Dummy for comments \\
+    fpm\_rand & Dummy used for comments when checking for randomization. Used instead of \emph{fpm} due to discrepancies when using the merge command. \\
+    kecnum & Subdistrict id \\
+    kecnum\_rand & Subdistrict id used when checking for randomization. Used instead of \emph{kecnum} due to discrepancies when using the merge command. \\
+    lndiffeall3mat & Missing expenditures for materials in road project. Measures in pct. \\
+    lndiffeall4 & Missing expenditures for major items in road project. Measures in pct. \\
+    lndiffeall4mainancil & Missing expenditures for major items in road and ancillary projects. Measured in pct. \\
+    lndiffeburuh & Missing expenditures for unskilled labor in road projects. Measures in pct. \\
+    podeszhill & Dummy for project being carried out in mountainous terrain. \\
+    randvar & Dummy used for randomization statistics. Must equal one when carrying out randomization statistics. Must be specified as an extra condition, typically as: \emph{if randvar == 1} (use for question 3c, otherwise use regvar). \\
+    regvar & Dummy used for regression. Must equal one when carrying out regressions. Must be specified as an extra condition, typically as: \emph{if regvar == 1} (use for all purposes in question 3 except 3c). \\
+    totalallocation & Total budget for project measured in Rp. millions. \\
+    totalmesjid & Number of mosques per 1000 in project area \\ 
+    und & Dummy for invites \\
+    und\_rand & Dummy used for invites when checking for randomization. Used instead of \emph{und} due to discrepancies when using the merge command. \\
+    undfpm & Dummy for invites send out without additional option of comments. \\
+    undfpm\_rand & Dummy used for invites send out without additional option of comments when checking for randomization. Used instead of \emph{undfpm} due to discrepancies when using the merge command. \\
+    z4RABnumsubproj & Number sub-projects \\
+    zdistancekec & Distance to sub-district. \\
+    zkadesage & Age of the village head. \\
+    zkadesbengkoktotal & Salary of the village head. \\
+    zkadesedyears & Education of the village head. \\
+    zpercentpoorpra & Relative measure of how many poor households there were in the village. \\
+    zpop & Number of people in the village measured in thousands. \\ \hline 
+  \end{longtable}
+\end{center}
+\end{appendices}
+
+ 
+
+
+
+
+\end{document}
